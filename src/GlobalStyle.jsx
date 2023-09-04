@@ -2,8 +2,6 @@ import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
 
-    @import url('https://fonts.googleapis.com/css2?family=Inder&display=swap');
-
     :root {
         --maxWidth: 1280px;
         --clr-white: #ffffff;
