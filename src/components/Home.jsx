@@ -10,7 +10,8 @@ import HeroImage from './HeroImage'
 import Grid from './Grid'
 import Thumbnail from './Thumbnail'
 import Loader from './Loader.jsx'
-import SearchBar from './SearchBar/index.jsx'
+import SearchBar from './SearchBar/'
+import Button from './Button/'
 
 
 //hooks
@@ -23,7 +24,9 @@ import NoImage from '../images/no-image.jpg'
 
 const Home = () => {
 
-    const { state, loading, error, searchTerm, setSearchTerm} = useHomeFetch() 
+    const { state, loading, error, searchTerm, setSearchTerm, setIsLoadingMore} = useHomeFetch() 
+
+    if (error) return <div>something went wrong...</div>
 
     return (
         <>
@@ -47,7 +50,9 @@ const Home = () => {
                  />
                 )
             )}
-            </Grid>  
+            </Grid>
+            {loading && <Loader />}
+            {state.page < state.total_pages && !loading && <Button text='load more' callback={() => setIsLoadingMore(true)}/>}  
         </>
     )
 }
