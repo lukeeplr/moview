@@ -1,5 +1,5 @@
 import React from 'react'
-import { Wrapper, Content, Text } from '../HeroImage/styles'
+import { Wrapper, Content, Text } from './styles'
 
 const HeroImage = ({image, title, text}) => (
     <Wrapper image={image}>

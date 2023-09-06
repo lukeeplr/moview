@@ -3,16 +3,17 @@ import styled from 'styled-components'
 export const Wrapper = styled.div`
     background: linear-gradient(
         to bottom, rgba(0, 0, 0, 0)
-        41%, rgba(0, 0, 0, 0.65)
+        0%, rgba(0, 0, 0, 0.8)
+        70%, rgba(24, 24, 27, 1)
         100%
 
     ), 
     url(${({ image }) => image}), var(--clr-dark-gray);
-    background-size: 100% cover;
+    background-size: cover ;
     background-position: center;
     height: 600px;
     position: relative;
-    animation: animatedHeroImage 1.5s ease-in-out;
+    animation: animatedHeroImage 0.5s ease-in-out;
 
     @keyframes animatedHeroImage {
         from {
