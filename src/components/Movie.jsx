@@ -7,6 +7,7 @@ import { IMAGE_BASE_URL, POSTER_SIZE } from '../config'
 //components
 import Grid from './Grid'
 import Loader from './Loader'
+import BreadCrumb from './BreadCrumb'
 
 //hook
 import { useMovieFetch } from '../hooks/useMovieFetch'
@@ -21,11 +22,12 @@ const Movie = () => {
 
     const { state: movie, loading, error } = useMovieFetch(movieID)
 
-    console.log(movie)
+    if (loading) return <Loader/>
+    if (error) return <div>something went wrong...</div>
 
     return (
         <>
-            <div>Movie</div>
+            <BreadCrumb movieTitle={movie.original_title}/>
         </>
     )
 
