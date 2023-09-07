@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
     background-color: var(--clr-dark-gray);
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     width: 100%;
     `
 
