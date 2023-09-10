@@ -23,7 +23,7 @@ const Movie: React.FC = () => {
 
     const { movieID } = useParams()
 
-    const { state: movie, loading, error } = useMovieFetch(movieID)
+    const { state: movie, loading, error } = useMovieFetch(String(movieID))
 
     if (loading) return <Loader/>
     if (error) return <div>Algo deu errado...</div>
