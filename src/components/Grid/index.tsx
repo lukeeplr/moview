@@ -3,7 +3,12 @@ import React from "react";
 //styles
 import { Wrapper, Content } from './styles'
 
-const Grid = ({ header, children}) => (
+type Props = {
+    header: string;
+    children: React.ReactNode;
+}
+
+const Grid: React.FC<Props> = ({ header, children}) => (
     <Wrapper>
         <h1>{header}</h1>
         <Content>

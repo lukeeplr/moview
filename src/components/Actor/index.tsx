@@ -3,7 +3,13 @@ import React from 'react'
 //styles
 import { Wrapper, Image } from './styles'
 
-const Actor = ({ name, character, imageURL }) => {
+type Props = {
+    name: string;
+    character: string;
+    imageURL: string;
+}
+
+const Actor: React.FC<Props> = ({ name, character, imageURL }) => {
 
     return (
         <Wrapper>

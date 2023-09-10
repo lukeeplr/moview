@@ -2,9 +2,15 @@ import React from 'react'
 
 import { Wrapper, Content } from './styles'
 
-import { calcTime, convertMoney } from '../../helper.js'
+import { calcTime, convertMoney } from '../../helper'
 
-const MovieInfoBar = ({ runtime, budget, revenue }) => {
+type Props = {
+    runtime: number
+    budget: number
+    revenue: number
+}
+
+const MovieInfoBar: React.FC<Props> = ({ runtime, budget, revenue }) => {
     return (
         <Wrapper>
             <Content>

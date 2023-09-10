@@ -19,14 +19,14 @@ import MovieInfo from './MovieInfo'
 import MovieInfoBar from './MovieInfoBar'
 
 
-const Movie = () => {
+const Movie: React.FC = () => {
 
     const { movieID } = useParams()
 
     const { state: movie, loading, error } = useMovieFetch(movieID)
 
     if (loading) return <Loader/>
-    if (error) return <div>something went wrong...</div>
+    if (error) return <div>Algo deu errado...</div>
 
     return (
         <>

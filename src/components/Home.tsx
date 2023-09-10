@@ -6,12 +6,12 @@ import { POSTER_SIZE, BACKDROP_SIZE, IMAGE_BASE_URL } from '../config.js'
 
 
 //components
-import HeroImage from './HeroImage'
-import Grid from './Grid'
-import Thumbnail from './Thumbnail'
+import HeroImage from './HeroImage/index.jsx'
+import Grid from './Grid/index.jsx'
+import Thumbnail from './Thumbnail/index.jsx'
 import Loader from './Loader.jsx'
-import SearchBar from './SearchBar/'
-import Button from './Button/'
+import SearchBar from './SearchBar/index.jsx'
+import Button from './Button/index.jsx'
 
 
 //hooks
@@ -22,11 +22,11 @@ import { useHomeFetch } from '../hooks/useHomeFetch.jsx'
 import NoImage from '../images/no-image.jpg'
 
 
-const Home = () => {
+const Home: React.FC = () => {
 
     const { state, loading, error, searchTerm, setSearchTerm, setIsLoadingMore} = useHomeFetch() 
 
-    if (error) return <div>something went wrong...</div>
+    if (error) return <div>Algo deu errado...</div>
 
     return (
         <>
@@ -36,7 +36,7 @@ const Home = () => {
         text={state.results[0].overview}
         />}
         <SearchBar setSearchTerm={setSearchTerm}/>
-         <Grid header={searchTerm ? 'Results' : 'Popular Movies'}>
+         <Grid header={searchTerm ? 'Resultados' : 'Em alta'}>
             {state.results.map(movie => (
                 <Thumbnail 
                 key={movie.id}
@@ -52,7 +52,7 @@ const Home = () => {
             )}
             </Grid>
             {loading && <Loader />}
-            {state.page < state.total_pages && !loading && <Button text='load more' callback={() => setIsLoadingMore(true)}/>}  
+            {state.page < state.total_pages && !loading && <Button text='ver mais' callback={() => setIsLoadingMore(true)}/>}  
         </>
     )
 }

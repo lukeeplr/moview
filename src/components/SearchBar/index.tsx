@@ -4,10 +4,13 @@ import React, { useEffect, useState, useRef } from 'react'
 import { Wrapper, Content } from './styles'
 
 //icons
-import { BsSearch } from 'react-icons/bs'
+import { FaSearch } from 'react-icons/fa'
 
+type Props = {
+    setSearchTerm: React.Dispatch<React.SetStateAction<string>>
+}
 
-const SearchBar = ({ setSearchTerm }) => {
+const SearchBar: React.FC<Props> = ({ setSearchTerm }) => {
 
     const [state, setState] = useState('')
     const initial = useRef(true)
@@ -29,9 +32,9 @@ const SearchBar = ({ setSearchTerm }) => {
     return (
         <Wrapper>
             <Content>
-                <BsSearch />
+                <FaSearch />
                 <input type="text"
-                placeholder='search movie'
+                placeholder='busque um filme'
                 onChange={e => setState(e.currentTarget.value)}
                 value={state}
                 />

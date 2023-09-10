@@ -4,7 +4,13 @@ import { Link } from 'react-router-dom'
 //styles
 import { Image } from './styles'
 
-const Thumbnail = ( { image, movieID, clickable}) => (
+type Props = {
+    image: string;
+    movieID?: number;
+    clickable: boolean;
+}
+
+const Thumbnail: React.FC<Props> = ( { image, movieID, clickable}) => (
     <div>
         {clickable ? (
             <Link to={`/${movieID}`}>

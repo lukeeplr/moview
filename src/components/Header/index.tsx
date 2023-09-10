@@ -6,7 +6,7 @@ import TMDB from '../../images/tmdb-logo.svg'
 
 import { Wrapper, Content, LogoImg, TMDBLogo } from "./styles";
 
-const Header = () => (
+const Header: React.FC = () => (
     <Wrapper>
         <Content>
             <Link to='/'>
