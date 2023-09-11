@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import Moview from '../../images/moview.svg' 
+import Moview from '../../images/moview-logo.svg' 
 import TMDB from '../../images/tmdb-logo.svg' 
 
 import { Wrapper, Content, LogoImg, TMDBLogo } from "./styles";
