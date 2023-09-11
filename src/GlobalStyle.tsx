@@ -3,6 +3,7 @@ import { createGlobalStyle } from "styled-components";
 export const GlobalStyle = createGlobalStyle`
 
     :root {
+        --clr-brand: #F0ABFC;
         --maxWidth: 1280px;
         --clr-white: #ffffff;
         --clr-light-gray: #f4f4f5;
