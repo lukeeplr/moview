@@ -5,6 +5,7 @@ import { Wrapper, Content } from './styles'
 
 //icons
 import { FaSearch } from 'react-icons/fa'
+import Wave from '../Wave'
 
 type Props = {
     setSearchTerm: React.Dispatch<React.SetStateAction<string>>
@@ -30,6 +31,7 @@ const SearchBar: React.FC<Props> = ({ setSearchTerm }) => {
     }, [state])
 
     return (
+        <>
         <Wrapper>
             <Content>
                 <FaSearch />
@@ -40,6 +42,8 @@ const SearchBar: React.FC<Props> = ({ setSearchTerm }) => {
                 />
             </Content>
         </Wrapper>
+        <Wave />
+        </>
     )
 }
 
